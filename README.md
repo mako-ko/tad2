@@ -40,23 +40,8 @@ src/
 └── views/               # Telas da aplicação
 ```
 
-## GitHub
-
-Para criar um repositório novo:
-
-```bash
-git init
-git add .
-git commit -m "Cria aplicação didática Tarefas Web"
-git branch -M main
-git remote add origin https://github.com/SEU-USUARIO/tarefas-web.git
-git push -u origin main
-```
-
-O projeto inclui um workflow simples em `.github/workflows/ci.yml` para executar o build no GitHub Actions.
-
 ## Observações didáticas
 
 A aplicação usa `localStorage` para persistência local, porque o objetivo inicial é ensinar frontend antes de integrar banco de dados. A pasta `services/` já mostra onde ficam as chamadas para backend com Axios.
 
-Para transformar em uma aplicação com backend real, substitua as actions do Vuex por chamadas aos métodos de `authService` e `taskService`.
+Para transformar em uma aplicação com backend real, será necessário substituir as actions do Vuex por chamadas aos métodos de `authService` e `taskService`, mas isso será abordado no próximo módulo com mais profundidade.
