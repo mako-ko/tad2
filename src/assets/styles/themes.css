@@ -1,0 +1,82 @@
+:root {
+
+  /* Fontes */
+  --font-sour-gummy: 'Sour Gummy', sans-serif;
+  --font-noto-sans-mono: 'Noto Sans Mono', monospace;
+
+  /* Tamanhos de Texto */
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-base: 1rem;
+  --text-lg: 1.125rem;
+  --text-xl: 1.25rem;
+  --text-2xl: 1.5rem;
+  --text-3xl: 1.875rem;
+  --text-4xl: 2.25rem;
+  --text-5xl: 3rem;
+
+  /* Cores */
+  --color-bg: #f7fff2;
+  --color-surface: #dfffca;
+  --color-card: #ffffff;
+  --color-text: #1f2937;
+  --color-muted: #6b7280;
+  --color-border: #d1d5db;
+  --color-primary: #71d81d;
+  --color-primary-contrast: #ffffff;
+  --color-danger: #d15209;
+  --color-success: #58a624;
+  --shadow-card: 0 8px 24px rgba(15, 23, 42, 0.08);
+
+  /* Cores Neutras */
+  --color-gray-50: #f9fafb;
+  --color-gray-100: #f3f4f6;
+  --color-gray-200: #e5e7eb;
+  --color-gray-300: #d1d5db;
+  --color-gray-400: #9ca3af;
+  --color-gray-500: #6b7280;
+  --color-gray-600: #4b5563;
+  --color-gray-700: #374151;
+  --color-gray-800: #1f2937;
+  --color-gray-900: #111827;
+
+  /* Cores Links */
+  --color-link: #71d81d;
+  --color-link-hover: #58A624;
+  --color-link-contrast: #182c00;
+  --color-link-secondary: #f1a363;
+  --color-link-secondary-hover: #ca6d38;
+}
+
+[data-theme='dark'] {
+  --color-bg: #142711;
+  --color-surface: #1f3722;
+  --color-card: #1f3722;
+  --color-text: #f9fafb;
+  --color-muted: #d1dbd4;
+  --color-border: #374151;
+  --color-primary: #58a624;
+  --color-primary-contrast: #ffffff;
+  --color-danger: #d36221;
+  --color-success: #64a836;
+  --shadow-card: 0 8px 24px rgba(0, 0, 0, 0.35);
+
+  /* Cores de Fundo */
+  --color-bg-primary: #f7fff2;
+  --color-bg-secondary: #f4f6f3;
+  --color-bg-terciary: #e7ebe5;
+
+  /* Gradientes */
+  --gradient-primary: linear-gradient(135deg, #A1FF63 0%, #58A624 100%);
+  --gradient-secondary: linear-gradient(135deg, #f1a363 0%, #ca6d38 100%);
+  --gradient-gray: linear-gradient(135deg, #f9fafb 0%, #111827 100%);
+  --gradient-success: linear-gradient(135deg, #10b981 0%, #047857 100%);
+  --gradient-warning: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+  --gradient-error: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+  --gradient-info: linear-gradient(135deg, #643bf6 0%, #4f3bf6 100%);
+}
+
+body {
+  background: var(--color-bg);
+  color: var(--color-text);
+}
