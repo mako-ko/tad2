@@ -12,7 +12,7 @@
 
       <AppAlert :message="errorMessage" type="error" />
 
-      <form @submit.prevent="handleLogin">
+      <form novalidate @submit.prevent="handleLogin">
         <AppInput id="email" v-model="email" type="email" label="E-mail" required :error="errors.email" />
         <AppInput id="password" v-model="password" type="password" label="Senha" required :error="errors.password" />
 
