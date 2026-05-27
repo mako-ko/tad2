@@ -64,6 +64,8 @@ export default {
 
       if (!isRequired(this.password)) {
         this.errors.password = 'Informe sua senha.'
+      } else if (this.password.length < 8) {
+        this.errors.password = 'A senha deve conter no mínimo 8 caracteres.'
       }
 
       return Object.keys(this.errors).length === 0
