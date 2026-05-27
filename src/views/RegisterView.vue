@@ -12,7 +12,7 @@
 
       <AppAlert :message="errorMessage" type="error" />
 
-      <form @submit.prevent="handleRegister">
+      <form novalidate @submit.prevent="handleRegister">
         <AppInput id="name" v-model="form.name" label="Nome" required :error="errors.name" />
         <AppInput id="email" v-model="form.email" type="email" label="Seu e-mail de preferência" required
           :error="errors.email" />
@@ -36,7 +36,7 @@
 import AppAlert from '../components/common/AppAlert.vue'
 import AppButton from '../components/common/AppButton.vue'
 import AppInput from '../components/common/AppInput.vue'
-import { hasMinLength, isEmail, isRequired } from '../utils/validators'
+import { hasMinLength, isEmail, isRequired, isValidFullName } from '../utils/validators'
 
 export default {
   name: 'RegisterView',
@@ -67,6 +67,10 @@ export default {
 
       if (!isRequired(this.form.name)) {
         this.errors.name = 'Informe seu nome.'
+      } else if (!hasMinLength(this.form.name, 5)) {
+        this.errors.name = 'O nome deve ter pelo menos 5 caracteres.'
+      } else if (!isValidFullName(this.form.name)) {
+        this.errors.name = 'Informe seu nome completo.'
       }
 
       if (!isRequired(this.form.email)) {
@@ -75,8 +79,8 @@ export default {
         this.errors.email = 'Informe um e-mail válido.'
       }
 
-      if (!hasMinLength(this.form.password, 6)) {
-        this.errors.password = 'A senha deve ter pelo menos 6 caracteres.'
+      if (!hasMinLength(this.form.password, 8)) {
+        this.errors.password = 'A senha deve ter pelo menos 8 caracteres.'
       }
 
       if (this.form.password !== this.form.passwordConfirmation) {

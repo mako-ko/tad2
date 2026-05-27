@@ -55,11 +55,17 @@ export default {
     inProgressTasks: state => state.items.filter(task => task.status === 'em_andamento'),
     doneTasks: state => state.items.filter(task => task.status === 'concluida'),
     filteredTasks: state => {
-      if (state.filter === 'todas') {
-        return state.items
+      // 1. Aplica o filtro de status (se não for 'todas')
+      let filtered = state.items;
+      if (state.filter !== 'todas') {
+        filtered = filtered.filter(task => task.status === state.filter);
       }
+      // 2. Separa tarefas não concluídas e concluídas
+      const incomplete = filtered.filter(task => task.status !== 'concluida');
+      const complete = filtered.filter(task => task.status === 'concluida');
 
-      return state.items.filter(task => task.status === state.filter)
+      // 3. Concatena: primeiro as incompletas, depois as concluídas
+      return [...incomplete, ...complete];
     },
     getTaskById: state => id => state.items.find(task => String(task.id) === String(id))
   },

@@ -200,3 +200,12 @@ textarea {
     flex-direction: column;
   }
 }
+
+.task-card--priority-high {
+  background: var(--gradient-primary);
+}
+
+.task-card--concluida {
+  text-decoration: line-through;
+  opacity: 0.6;
+}

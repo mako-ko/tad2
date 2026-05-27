@@ -1,5 +1,5 @@
 <template>
-  <form class="task-form" @submit.prevent="submitForm">
+  <form novalidate class="task-form" @submit.prevent="submitForm">
     <AppInput id="title" v-model="form.title" label="Título" required :error="errors.title" />
 
     <div class="form-field">
@@ -86,12 +86,16 @@ export default {
     validate() {
       this.errors = {}
 
-      if (!this.form.title.trim()) {
+        if(!this.form.title.trim()) {
         this.errors.title = 'Informe o título da tarefa.'
+      } else if (this.form.title.trim().length < 5) {
+        this.errors.title = 'O título deve ter pelo menos 5 caracteres.'
       }
 
       if (!this.form.description.trim()) {
         this.errors.description = 'Informe a descrição da tarefa.'
+      } else if (this.form.description.trim().length < 3) {
+        this.errors.description = 'A descrição deve ter pelo menos 3 caracteres.'
       }
 
       return Object.keys(this.errors).length === 0

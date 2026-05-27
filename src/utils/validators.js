@@ -9,3 +9,7 @@ export function isEmail(value) {
 export function hasMinLength(value, size) {
   return String(value || '').length >= size
 }
+
+export function isValidFullName(value) {
+  return /^[a-zA-Z]+ [a-zA-Z]+(?: [a-zA-Z]+)*$/.test(value)
+}

@@ -61,6 +61,7 @@
           v-for="task in filteredTasks"
           :key="task.id"
           :task="task"
+          :class="{ 'task-card--priority-high': task.priority === 'alta', 'task-card--concluida': task.status === 'concluida' }"
           @complete="completeTask"
           @remove="removeTask"
         />
